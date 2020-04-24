@@ -1,23 +1,59 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/home/style.css">
+    <link rel="stylesheet" href="/css/home/fontello/css/facebook.css">
+    <title>Del Sector Social</title>
+  </head>
+  <body>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+    <div class="container">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+      <div class="logo">
+        <img src="logo2.png" alt="logo">
+      </div>
 
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+
+      <aside class="social-media">
+        <ul>
+          <li id="fb"><a href="https://facebook.com/ceroaladerecha"><i class="icon-facebook-rect "></i></a></li>
+          <li id="tw"><a href="https://twitter.com/ceroaladerecha"><i class="icon-twitter-bird"></i></a></li>
+          <li id="ig"><a href="https://instagram.com/ceroaladerecha"><i class="icon-instagram"></i></a></li>
+        </ul>
+      </aside>
+
+
+      <section class="searcher">
+        <p>
+          <input type="search" name="searcher" placeholder="  Buscar...">
+        </p>
+      </section>
+
+
+      <section class="countrys">
+        <p>
+          Glosario de recomendaciones terminológicas
+           que busca cuestionar las expresiones
+           discriminatorias del lenguaje automático.
+         </p>
+         <br>
+         <p>
+           Glossaire de recommandations
+           terminologiques, qui cherche a interroger
+           les expressions discriminatoires
+           et stigmatisant du langage automatique.
+          </p>
+          <br>
+          <p>
+            Glossary of recommended terminology
+            that looks to question discriminatory
+            expressions and terms in e veryday language.
+           </p>
+
+      </section>
+
     </div>
-</div>
-@endsection
+
+  </body>
+</html>

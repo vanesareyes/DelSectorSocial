@@ -1,0 +1,85 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+
+body{
+  background-color: #f1e9e9;
+}
+
+/*LOGO*/
+.logo {
+  margin-top: 7vh;
+  margin-left: 14vw;
+  width: 72vw;
+  height: 31vh;
+}
+.logo img {
+  width: 100%;
+  height: 100%;
+}
+
+/*ASIDE*/
+.social-media {
+  display: fixed;
+  position: absolute;
+  top:41%;
+}
+.social-media li {
+  width: 11vw;
+  height: 7vh;
+}
+#fb{
+  background-color: #3b5998;
+}
+#tw{
+  background-color: #00abf0;
+}
+#ig{
+  background-color: #505050;
+}
+.social-media ul li a {
+  display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 5px;
+	height: 40px;
+	width: 40px;
+	font-size: 22px;
+  color:white;
+}
+
+/*SEARCHER*/
+.searcher{
+
+}
+.searcher input{
+  font-size: 30px;
+  position: relative;
+  padding: 10px;
+  padding-right: 35px;
+  width: 60vw;
+  height: 8vh;
+  top: 100px;
+  background-color: rgba(255,255,255, 0.8);
+  color: #000;
+  left: 20%;
+  border-radius: 25px;
+  border: solid 12px #7f7f7f;
+}
+
+/*COUNTRYS*/
+.countrys{
+  width: 100%;
+  margin-top: 35vw;
+  text-align: center;
+}
+.countrys p{
+  font-size: 35px;
+  text-align: justify;
+  margin-left: 25%;
+  margin-right: 25%;
+  width:50%;
+}
