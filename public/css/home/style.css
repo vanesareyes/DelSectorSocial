@@ -6,30 +6,34 @@
 
 
 body{
+  font-family: 'Candara';
   background-color: #f1e9e9;
 }
 
 /*LOGO*/
 .logo {
-  margin-top: 7vh;
-  margin-left: 14vw;
-  width: 72vw;
-  height: 31vh;
+  margin-top: 50px;
+  text-align: center;
 }
-.logo img {
-  width: 100%;
-  height: 100%;
+img {
+width: 300px!important;
+max-width: 300px;
 }
 
 /*ASIDE*/
 .social-media {
-  display: fixed;
-  position: absolute;
-  top:41%;
+  position: fixed;
+  left: 0;
+  top: 300px;
+  z-index: 2000;
+}
+.social-media ul{
+  list-style: none;
 }
 .social-media li {
-  width: 11vw;
-  height: 7vh;
+  width: 46px;
+  height: 56px;
+  list-style: none;
 }
 #fb{
   background-color: #3b5998;
@@ -44,30 +48,31 @@ body{
   display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0 5px;
-	height: 40px;
-	width: 40px;
-	font-size: 22px;
+	height: 100%;
+	width: 100%;
+	font-size: 15px;
   color:white;
 }
 
 /*SEARCHER*/
 .searcher{
-
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
 }
 .searcher input{
-  font-size: 30px;
+  font-size: 14px;
   position: relative;
   padding: 10px;
   padding-right: 35px;
-  width: 60vw;
-  height: 8vh;
-  top: 100px;
+  width: 60%;
+  height: 60px;
+  top: 40px;
   background-color: rgba(255,255,255, 0.8);
   color: #000;
   left: 20%;
-  border-radius: 25px;
-  border: solid 12px #7f7f7f;
+  border-radius: 10px;
+  border: solid 5px #7f7f7f;
 }
 
 /*COUNTRYS*/
@@ -77,9 +82,9 @@ body{
   text-align: center;
 }
 .countrys p{
-  font-size: 35px;
+  font-size: 15px;
   text-align: justify;
   margin-left: 25%;
   margin-right: 25%;
-  width:50%;
+  width:0%;
 }

@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/home/style.css">
-    <link rel="stylesheet" href="/css/home/fontello/css/facebook.css">
+    <link rel="stylesheet" href="vistas.css">
+    <link rel="stylesheet" href="fontello/css/facebook.css">
     <title>Del Sector Social</title>
   </head>
   <body>
@@ -11,7 +11,7 @@
     <div class="container">
 
       <div class="logo">
-        <img src="logo2.png" alt="logo">
+        <img src="https://cdn.discordapp.com/attachments/691019020345933906/703707632082485408/logo2.png" alt="logo">
       </div>
 
 
@@ -26,7 +26,7 @@
 
       <section class="searcher">
         <p>
-          <input type="search" name="searcher" placeholder="  Buscar...">
+          <input type="search" name="searcher" placeholder="Buscar...">
         </p>
       </section>
 
@@ -38,12 +38,16 @@
            discriminatorias del lenguaje automático.
          </p>
          <br>
+         <br>
+         <br>
          <p>
            Glossaire de recommandations
            terminologiques, qui cherche a interroger
            les expressions discriminatoires
            et stigmatisant du langage automatique.
           </p>
+          <br>
+          <br>
           <br>
           <p>
             Glossary of recommended terminology
