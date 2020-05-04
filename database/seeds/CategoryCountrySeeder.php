@@ -14,31 +14,34 @@ class CategoryCountrySeeder extends Seeder
     {
 
         //COUNTRIES ID//
-        $argentinaID = DB::table('countries')->whereName('Argentina')->value('id');
-        $colombiaID = DB::table('countries')->whereName('Colombia')->value('id');
-        $españaID = DB::table('countries')->whereName('España')->value('id');
-        $peruID = DB::table('countries')->whereName('Perú')->value('id');
-        $venezuelaID = DB::table('countries')->whereName('Venezuela')->value('id');
-        $franciaID = DB::table('countries')->whereName('Francia')->value('id');
-        $suizaID = DB::table('countries')->whereName('Suiza')->value('id');
-        $estadosUnidosID = DB::table('countries')->whereName('Estados Unidos')->value('id');
+        $argentinaId = DB::table('countries')->whereName('Argentina')->value('id');
+        $colombiaId = DB::table('countries')->whereName('Colombia')->value('id');
+        $españaId = DB::table('countries')->whereName('España')->value('id');
+        $peruId = DB::table('countries')->whereName('Perú')->value('id');
+        $venezuelaId = DB::table('countries')->whereName('Venezuela')->value('id');
+        $franciaId = DB::table('countries')->whereName('Francia')->value('id');
+        $suizaId = DB::table('countries')->whereName('Suiza')->value('id');
+        $estadosUnidosId = DB::table('countries')->whereName('Estados Unidos')->value('id');
 
         //CATEGORIES//
-        $catsInSpanish = DB::table('categories')->select('name')->where('id', '<', 23)->get();
-        $catsInFrench = DB::table('categories')->select('name')->where('id', '>', 22)->where('id', '<', 28)->get();
-        $catsInEnglish = DB::table('categories')->select('name')->where('id', '>', 27)->get();
+        $catsInSpanish = DB::table('categories')->select('name', 'id')->where('id', '<', 23)->get();
+        $catsInFrench = DB::table('categories')->select('name', 'id')->where('id', '>', 22)->where('id', '<', 28)->get();
+        $catsInEnglish = DB::table('categories')->select('name', 'id')->where('id', '>', 27)->get();
 
 
+        DB::table('category_country')->insert([
+          'category_id' => $catsInSpanish->first()->id,
+          'country_id' => $argentinaID
+        ]);
 
-        for($i = 0; $i < 23; $i++){
-          dd($catsInSpanish[$i]->name);
-        }
+    }
 
-
-        // DB::table('category_country')->insert([
-        //   'category_id' => $cat,
-        //   'country_id' => $argentinaID
-        // ]);
-
+    protected function getCategories ($categories, $countryID){
+      foreach($categories as $category){
+        DB::table('category_country')->insert([
+          'category_id' => $category->id,
+          'country_id' => $argentinaID
+        ]);
+      }
     }
 }
