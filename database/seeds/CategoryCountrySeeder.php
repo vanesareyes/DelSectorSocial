@@ -31,7 +31,7 @@ class CategoryCountrySeeder extends Seeder
 
         DB::table('category_country')->insert([
           'category_id' => $catsInSpanish->first()->id,
-          'country_id' => $argentinaID
+          'country_id' => $argentinaId
         ]);
 
     }
@@ -40,7 +40,7 @@ class CategoryCountrySeeder extends Seeder
       foreach($categories as $category){
         DB::table('category_country')->insert([
           'category_id' => $category->id,
-          'country_id' => $argentinaID
+          'country_id' => $argentinaId
         ]);
       }
     }

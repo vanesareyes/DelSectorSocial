@@ -15,8 +15,16 @@ class CreateCategoryCountryTable extends Migration
     {
         Schema::create('category_country', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('category_id')->unique();
-            $table->unsignedBigInteger('country_id')->unique();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')
+                  ->references('id')
+                  ->on('categories')
+                  ->onDelete('cascade');
+            $table->unsignedBigInteger('country_id');
+            $table->foreign('country_id')
+                  ->references('id')
+                  ->on('countries')
+                  ->onDelete('cascade');
             $table->timestamps();
         });
     }
