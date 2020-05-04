@@ -15,13 +15,15 @@ class DatabaseSeeder extends Seeder
         'rols',
         'languages',
         'countries',
-        'categories'
+        'categories',
+        'category_country'
       ]);
         // $this->call(UserSeeder::class);
         $this->call(RolSeeder::class);
         $this->call(LanguageSeeder::class);
         $this->call(CountrySeeder::class);
         $this->call(CategorySeeder::class);
+        $this->call(CategoryCountrySeeder::class);
     }
 
     protected function truncateTables(array $tables)
