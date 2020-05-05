@@ -17,10 +17,6 @@ class CreateSourcesTable extends Migration
             $table->bigIncrements('id');
             $table->char('name', 50);
             $table->char('link', 225);
-            $table->unsignedBigInteger('entry_id');
-            $table->foreign('entry_id')
-                    ->references('id')
-                    ->on('entries');
             $table->timestamps();
         });
     }

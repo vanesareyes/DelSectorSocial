@@ -28,6 +28,10 @@ class CreateEntriesTable extends Migration
             $table->foreign('campaign_id')
                     ->references('id')
                     ->on('campaigns');
+            $table->unsignedBigInteger('source_id');
+            $table->foreign('source_id')
+                  ->references('id')
+                  ->on('sources');
             $table->timestamps();
         });
     }

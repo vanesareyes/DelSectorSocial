@@ -25,26 +25,26 @@ class CategoryCountrySeeder extends Seeder
         $estadosUnidosId = DB::table('countries')->whereName('Estados Unidos')->value('id');
 
         //ARRAYS COUNTRIES ID//
-        $catsInSpanish = [$argentinaId, $colombiaId, $españaId, $peruId, $venezuelaId];
-        $catsInFrench = [$franciaId, $suizaId];
-        $catsInEnglish = [$estadosUnidosId];
+        $spanishCountries = [$argentinaId, $colombiaId, $españaId, $peruId, $venezuelaId];
+        $frenchCountries = [$franciaId, $suizaId];
+        $englishCountries = [$estadosUnidosId];
 
-        $catsInCountries = [ $catsInSpanish, $catsInFrench, $catsInEnglish];
+        $arrayOfCountries = [ $spanishCountries, $frenchCountries, $englishCountries];
 
         //CATEGORIES//
         $categories = Category::all();
 
-        foreach($catsInCountries as $catsInCountry)
+        foreach($arrayOfCountries as $countries)
         {
-          foreach($catsInCountry as $country)
+          foreach($countries as $country)
           {
             if($country < 6){
               foreach($categories as $category)
               {
-                $catego_id = $category->id;
-                if($catego_id < 23){
+                $category_id = $category->id;
+                if($category_id < 23){
                   DB::table('category_country')->insert([
-                    'category_id' => $catego_id,
+                    'category_id' => $category_id,
                     'country_id' => $country
                   ]);
                 }
@@ -52,10 +52,10 @@ class CategoryCountrySeeder extends Seeder
             }elseif($country > 5 && $country < 8){
                foreach($categories as $category)
                {
-                 $catego_id = $category->id;
-                 if($catego_id > 22 && $catego_id < 28){
+                 $category_id = $category->id;
+                 if($category_id > 22 && $category_id < 28){
                    DB::table('category_country')->insert([
-                     'category_id' => $catego_id,
+                     'category_id' => $category_id,
                      'country_id' => $country
                    ]);
                  }
@@ -63,10 +63,10 @@ class CategoryCountrySeeder extends Seeder
              }else{
                foreach($categories as $category)
                {
-                 $catego_id = $category->id;
-                 if($catego_id > 27){
+                 $category_id = $category->id;
+                 if($category_id > 27){
                    DB::table('category_country')->insert([
-                     'category_id' => $catego_id,
+                     'category_id' => $category_id,
                      'country_id' => $country
                    ]);
             }
