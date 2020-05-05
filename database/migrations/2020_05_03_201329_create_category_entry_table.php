@@ -20,9 +20,7 @@ class CreateCategoryEntryTable extends Migration
                     ->references('id')
                     ->on('categories');
             $table->unsignedBigInteger('entry_id');
-            $table->foreign('entry_id')
-                    ->references('id')
-                    ->on('entries');
+            $table->foreign('entry_id')->references('id')->on('entries');
             $table->timestamps();
         });
     }
