@@ -15,8 +15,14 @@ class CreateEntryUserTable extends Migration
     {
         Schema::create('entry_user', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('user_id');
-            $table->foreignId('entry_id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')
+                    ->references('id')
+                    ->on('users');
+            $table->unsignedBigInteger('entry_id');
+            $table->foreign('entry_id')
+                    ->references('id')
+                    ->on('entries');
             $table->timestamps();
         });
     }
