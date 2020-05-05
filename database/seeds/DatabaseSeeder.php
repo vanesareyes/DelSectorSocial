@@ -30,8 +30,9 @@ class DatabaseSeeder extends Seeder
         CountrySeeder::class,
         CategorySeeder::class,
         CategoryCountrySeeder::class,
+        UserSeeder::class,
         ]);
-     
+
     }
       protected function truncateTables(array $tables)
       {
@@ -43,5 +44,5 @@ class DatabaseSeeder extends Seeder
 
         DB::statement('SET FOREIGN_KEY_CHECKS = 1;');
       }
-    
+
 }

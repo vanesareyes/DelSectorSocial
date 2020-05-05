@@ -24,21 +24,15 @@ class CategoryCountrySeeder extends Seeder
         $suizaId = DB::table('countries')->whereName('Suiza')->value('id');
         $estadosUnidosId = DB::table('countries')->whereName('Estados Unidos')->value('id');
 
-        //CATEGORIES//
+        //ARRAYS COUNTRIES ID//
         $catsInSpanish = [$argentinaId, $colombiaId, $españaId, $peruId, $venezuelaId];
         $catsInFrench = [$franciaId, $suizaId];
         $catsInEnglish = [$estadosUnidosId];
 
-        // $catsInSpanish = DB::table('categories')->select('name', 'id')->where('id', '<', 23)->get();
-        // $catsInFrench = DB::table('categories')->select('name', 'id')->where('id', '>', 22)->where('id', '<', 28)->get();
-        // $catsInEnglish = DB::table('categories')->select('name', 'id')->where('id', '>', 27)->get();
-
         $catsInCountries = [ $catsInSpanish, $catsInFrench, $catsInEnglish];
-        // DB::table('category_country')->insert([
-        //   'category_id' => $catsInSpanish->first()->id,
-        //   'country_id' => $argentinaId
-        // ]);
-      $categories = Category::all();
+
+        //CATEGORIES//
+        $categories = Category::all();
 
         foreach($catsInCountries as $catsInCountry)
         {
@@ -75,19 +69,10 @@ class CategoryCountrySeeder extends Seeder
                      'category_id' => $catego_id,
                      'country_id' => $country
                    ]);
-                 }
-               }
-             }
-
-
-                // DB::table('category_country')->insert([
-                //   'category_id' => $category->id,
-                //   'country_id' => $argentinaId
-                // ]);
-              }
             }
-
-
+          }
+        }
+      }
     }
-
+  }
 }

@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->text('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->longText('password');
-            $table->string('avatar')->default('user.jpg');
+            $table->string('avatar')->default('user.jpg')->nullable();
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')
                     ->references('id')
