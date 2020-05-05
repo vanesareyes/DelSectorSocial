@@ -17,14 +17,12 @@ class CreateEntryUserTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
-                  ->references('id')
-                  ->on('users')
-                  ->onDelete('cascade');
+                    ->references('id')
+                    ->on('users');
             $table->unsignedBigInteger('entry_id');
             $table->foreign('entry_id')
-                  ->references('id')
-                  ->on('entries')
-                  ->onDelete('cascade');
+                    ->references('id')
+                    ->on('entries');
             $table->timestamps();
         });
     }

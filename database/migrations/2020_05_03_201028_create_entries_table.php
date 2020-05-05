@@ -22,14 +22,12 @@ class CreateEntriesTable extends Migration
             $table->text('howToUse');
             $table->unsignedBigInteger('language_id');
             $table->foreign('language_id')
-                  ->references('id')
-                  ->on('languages')
-                  ->onDelete('cascade');
+                    ->references('id')
+                    ->on('languages');
             $table->unsignedBigInteger('campaign_id');
             $table->foreign('campaign_id')
-                  ->references('id')
-                  ->on('campaigns')
-                  ->onDelete('cascade');
+                    ->references('id')
+                    ->on('campaigns');
             $table->timestamps();
         });
     }
