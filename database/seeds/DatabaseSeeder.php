@@ -16,7 +16,13 @@ class DatabaseSeeder extends Seeder
         'languages',
         'countries',
         'categories',
-        'category_country'
+        'category_country',
+        'users',
+        'campaigns',
+        'category_entry',
+        'entries',
+        'entry_user',
+        'sources'
       ]);
         // $this->call(UserSeeder::class);
         $this->call(RolSeeder::class);

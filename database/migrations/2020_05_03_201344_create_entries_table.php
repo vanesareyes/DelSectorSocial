@@ -20,8 +20,16 @@ class CreateEntriesTable extends Migration
             $table->char('recommendedEntry1', 80);
             $table->char('recommendedEntry2', 80);
             $table->text('howToUse');
-            $table->foreignId('language_id');
-            $table->foreignId('campaign_id');
+            $table->unsignedBigInteger('language_id');
+            $table->foreign('language_id')
+                  ->references('id')
+                  ->on('languages')
+                  ->onDelete('cascade');
+            $table->unsignedBigInteger('campaign_id');
+            $table->foreign('campaign_id')
+                  ->references('id')
+                  ->on('campaigns')
+                  ->onDelete('cascade');
             $table->timestamps();
         });
     }

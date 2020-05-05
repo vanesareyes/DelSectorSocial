@@ -15,8 +15,8 @@ class CreateCategoryEntryTable extends Migration
     {
         Schema::create('category_entry', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->foreignId('category_id');
-            $table->foreignId('entry_id');
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('entry_id');
             $table->timestamps();
         });
     }
