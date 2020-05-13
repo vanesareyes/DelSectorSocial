@@ -31,6 +31,9 @@ class DatabaseSeeder extends Seeder
         CategorySeeder::class,
         CategoryCountrySeeder::class,
         UserSeeder::class,
+        CampaignSeeder::class,
+        EntrySeeder::class,
+        SourceSeeder::class,
         ]);
 
     }
