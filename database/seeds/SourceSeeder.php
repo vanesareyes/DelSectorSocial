@@ -13,24 +13,59 @@ class SourceSeeder extends Seeder
      */
     public function run()
     {
-        $entryId = DB::table('entries')->whereTitle('Abandono escolar')->value('id');
+        $entryId1 = DB::table('entries')->whereTitle('Abandono escolar')->value('id');
+        $entryId2 = DB::table('entries')->whereTitle('Aborígenes')->value('id');
 
+        //Abandono escolar//
         Source::create([
           'name' => 'Definición ABC de Deserción escolar',
           'link' => 'https://www.definicionabc.com/social/desercion-escolar.php',
-          'entry_id' => $entryId
+          'entry_id' => $entryId1
         ]);
 
         Source::create([
           'name' => 'Definición.de Deserción escolar',
           'link' => 'https://definicion.de/desercion-escolar/',
-          'entry_id' => $entryId
+          'entry_id' => $entryId1
         ]);
 
         Source::create([
           'name' => 'Abandono escolar: ya rescataron a 3.700 chicos y van por más',
           'link' => 'https://www.clarin.com/sociedad/desercion_escolar-secundaria_0_Sylo9VcPXl.html',
-          'entry_id' => $entryId
+          'entry_id' => $entryId1
+        ]);
+
+
+
+        //Aborígenes//
+        Source::create([
+          'name' => 'Wikipedia - Aborigen',
+          'link' => 'https://es.wikipedia.org/wiki/Aborigen',
+          'entry_id' => $entryId2
+        ]);
+
+        Source::create([
+          'name' => 'Real Academia Española - Aborigen',
+          'link' => 'https://dle.rae.es/aborigen',
+          'entry_id' => $entryId2
+        ]);
+
+        Source::create([
+          'name' => 'INADI Buenas Prácticas en la Comunicación Pública - Pueblos Indígenas',
+          'link' => 'http://www.inadi.gob.ar/wp-content/uploads/2011/09/buenas-practicas-pueblos-indigenas.pdf',
+          'entry_id' => $entryId2
+        ]);
+
+        Source::create([
+          'name' => 'Terminología Survival',
+          'link' => 'https://www.survival.es/conocenos/terminologia',
+          'entry_id' => $entryId2
+        ]);
+
+        Source::create([
+          'name' => 'Vocabulario solidario, qué palabras debemos evitar y por qué',
+          'link' => 'https://www.consumer.es/solidaridad/vocabulario-solidario-que-palabras-debemos-evitar-y-por-que.html',
+          'entry_id' => $entryId2
         ]);
     }
 }

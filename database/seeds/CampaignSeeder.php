@@ -17,5 +17,11 @@ class CampaignSeeder extends Seeder
           'description' => 'lorem ipsum',
           'link' => 'http://www.cbtis233.mx/escolares/campana-abandono-escolar-sigue-estudiando/',
         ]);
+
+        DB::table('campaigns')->insert([
+          'title' => 'Campaña a favor de los pueblos originarios',
+          'description' => 'lorem ipsum',
+          'link' => 'https://www.survival.es/indigenas',
+        ]);
     }
 }
