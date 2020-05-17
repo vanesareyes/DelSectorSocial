@@ -15,7 +15,6 @@ class UserSeeder extends Seeder
     {
       $adminId = DB::table('roles')->whereName('admin')->value('id');
       $userId = DB::table('roles')->whereName('user')->value('id');
-      $invitedId = DB::table('roles')->whereName('invitado')->value('id');
 
         User::create([
           'first_name' => 'Administrador',
@@ -23,6 +22,13 @@ class UserSeeder extends Seeder
           'email' => 'delsector@social.com',
           'password' => 'delsectorsocial',
           'role_id' => $adminId
+        ]);
+        User::create([
+          'first_name' => 'Usuario',
+          'last_name' => 'delsectorsocial',
+          'email' => 'usuario@gmail.com',
+          'password' => bcrypt('usuario'),
+          'role_id' => $userId
         ]);
     }
 }

@@ -20,3 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Entradas
+    Route::get('createEntries', 'EntryController@create')->name('createEntries')->middleware('auth');
+    Route::post('createEntries', 'EntryController@store')->name('createEntries')->middleware('auth');

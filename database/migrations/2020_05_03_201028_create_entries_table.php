@@ -15,19 +15,19 @@ class CreateEntriesTable extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('title', 50);
-            $table->longText('definition');
-            $table->char('recommendedEntry1', 80);
-            $table->char('recommendedEntry2', 80);
-            $table->text('howToUse');
             $table->unsignedBigInteger('language_id');
             $table->foreign('language_id')
                     ->references('id')
                     ->on('languages');
-            $table->unsignedBigInteger('campaign_id');
-            $table->foreign('campaign_id')
+            $table->unsignedBigInteger('author_id');
+            $table->foreign('author_id')
                     ->references('id')
-                    ->on('campaigns');
+                    ->on('users');
+            $table->char('title', 50);
+            $table->longText('definition');
+            $table->char('recommendedEntry1', 80)->nullable();
+            $table->char('recommendedEntry2', 80)->nullable();
+            $table->text('howToUse');
             $table->timestamps();
         });
     }

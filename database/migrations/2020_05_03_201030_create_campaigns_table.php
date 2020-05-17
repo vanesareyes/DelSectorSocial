@@ -18,6 +18,10 @@ class CreateCampaignsTable extends Migration
             $table->char('title', 50);
             $table->longText('description');
             $table->char('link', 225);
+            $table->unsignedBigInteger('entry_id');
+            $table->foreign('entry_id')
+                    ->references('id')
+                    ->on('entries');       
             $table->timestamps();
         });
     }
