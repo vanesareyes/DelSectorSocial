@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Entry;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 // Entradas
     Route::get('createEntries', 'EntryController@create')->name('createEntries')->middleware('auth');
     Route::post('createEntries', 'EntryController@store')->name('createEntries')->middleware('auth');
+
+    Route::get('prueba', function () {
+        $entry = Entry::find(22);
+        $sourses = $entry->sources;
+        dd($entry);
+    });

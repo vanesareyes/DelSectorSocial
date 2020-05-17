@@ -27,7 +27,7 @@ class CreateEntriesTable extends Migration
             $table->longText('definition');
             $table->char('recommendedEntry1', 80)->nullable();
             $table->char('recommendedEntry2', 80)->nullable();
-            $table->text('howToUse');
+            $table->text('howToUse')->nullable()->default(null);
             $table->timestamps();
         });
     }
