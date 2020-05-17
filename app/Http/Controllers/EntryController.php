@@ -59,7 +59,6 @@ class EntryController extends Controller
      */
     public function store(Request $request)
     {  
-        dd($request);
         $entry = new Entry();
 
         $entry->language_id = $request->input('language_id');
@@ -75,23 +74,28 @@ class EntryController extends Controller
         if ($guardo) {
             $entrada = Entry::where('title', $title)->get();
             $entrada_id = $entrada[0]->id;
+
+            $sources = $request->input('sources');
             
-
-
-                $source = new Source();
+            foreach ($sources as $source) {
                 
-                $source->title = $request->input('title');
-                $source->link = $request->input('link');
-                $source->entry_id = $entrada_id;
+                    if ($source['titulo-link'] != null and $source['link'] != null) {
+                        $newSource = new Source();
+                        
+                        $newSource->name = $source['titulo-link'];
+                        $newSource->link = $source['link'];
+                        $newSource->entry_id = $entrada_id;
 
-                $source->save();
-
+                        $newSource->save();
+                    }
+                }
+                
+            
         } else {
-            # code...
+            return back();
         }
-        
 
-        dd($entrada[0]);
+        return back();
     }
 
     /**
