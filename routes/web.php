@@ -26,7 +26,7 @@ Route::get('/home', 'HomeController@index')->name('home');
     Route::post('createEntries', 'EntryController@store')->name('createEntries')->middleware('auth');
 
     Route::get('prueba', function () {
-        $entry = Entry::find(22);
-        $sourses = $entry->sources;
+        $entry = Entry::find(5);//se tiene que tener desde antes una entrada que tenga el id 5 o solo ponerle un id que tengas en la base de datos
+        $categories = $entry->categories()->attach(1);// acá entra a todas sus categorias y después con attach() se le manda el id de la categoria que se quiere vincular en la tabla pivot
         dd($entry);
     });

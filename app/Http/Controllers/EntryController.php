@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Campaign;
 use App\Entry;
 use App\Language;
+use App\Category;
 use App\Source;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,7 +30,11 @@ class EntryController extends Controller
      */
     public function create()
     {   $languages = Language::all();
-        return view('createEntries')->with('languages', $languages);
+        $categories = Category::all();
+        $entries = Entry::all();
+        return view('createEntries')->with('languages', $languages)
+                                    ->with('categories', $categories)
+                                    ->with('entries', $entries);
         // $form->validate([
         //   'title' => 'required',
         //   'definition' => 'required',
@@ -59,7 +64,8 @@ class EntryController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {    //** HAY QUE ACLARAR QUE TODAVÍA FALTAN LAS VALIDACIONES **
+    {   
+         //** HAY QUE ACLARAR QUE TODAVÍA FALTAN LAS VALIDACIONES **
 
     // 1ERO CREO UNA ENTRADA
         $entry = new Entry();
@@ -94,6 +100,42 @@ class EntryController extends Controller
                         $newSource->save();
                     }
                 }
+                
+            
+        } else {
+            // ESTO ES PROVISORIO, PERO EN CASO DE QUE NO SE GUARDE LA ENTRADA ME MANDA DE NUEVO A LA PÁGINA ANTERIO CON UNA NO TIFICACIÓN DE QUE NO SE GUARDÓ LA ENTRADA
+            return redirect()->route('createEntries')->with('message', 'La entrada no pudo ser creada'); //hay que poner un condicional para que en la vista aparezca en danger(rojo) y no verde (el fondo)
+        }
+    // 3ERO CREAR LAS RELACIONES CON LAS CATEGORIAS
+        if ($guardo) {
+             //BUSCO ESA ENTRADA CREADA
+            $entrada_id = $entrada[0]->id;  //SOLAMENTE BUSCO EL ID PARA PONERLO EN LOS RECURSOS QUE PUDO HABER PUESTO
+
+            $categories = $request->input('categories'); // PONGO TODAS LAS Categorias EN LA VARIABLE $categories 
+            
+             //HAGO UN FOREACH PARA ENTRAR EN CADA UNA DE LAS Categorias (VACIAS O COMPLETAS)
+                
+                if ( count($categories) > 0 ) { //LO CONDICIONO PARA QUE no entré si viene sin nada, es algo más de seguridad
+                    //por las dudas llamé denuevo a la entrada que ya se creó (porque me había dado un error, pero se puede probar de nuevo solo llamar a la que lla había hecho más arriba)                                        
+                    $entrada = Entry::where('title', $title)->get();
+
+                    // Se supone que acá entra a cada elemento del array categories
+                    //category tendría que ser el numero del ID de las categorias que se seleccionaron
+                   foreach ($categories as $category) {
+                       
+                       $entrada->categories()->attach($category);//tengo un ejemplo en web.php en la ruta prueba
+                   }
+                    
+                    
+                    // $newCategory = new Category();
+                    
+                    // $newCategory->name = $Category['titulo-link'];
+                    // $newCategory->link = $Category['link'];
+                    // $newCategory->entry_id = $entrada_id; // ACÁ UTILIZO LA $ENTRADA_ID QUE HABÍA ALMACENADO EL ID DE LA ENTRADA QUE SE CREO PREVIAMENTE
+
+                    // $newCategory->save();
+                }
+            
                 
             
         } else {

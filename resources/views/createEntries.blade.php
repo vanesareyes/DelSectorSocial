@@ -49,7 +49,27 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <div class="form-group row category-entry">
+                            <label for="category_id" class="col-md-4 col-form-label text-md-right">{{ __('category') }}</label>
+                            <p>Puede seleccionar varias categorias sombreando varias opciones sin soltar el mouse o agregar más categorias con Ctrl + click en la categoria</p>
+                            <div class="col-md-6">
+                                <select name="categories[]" id="category_id" multiple>
+                                    
+                                    @foreach ( $categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach
                         
+                                </select>
+
+                                @error('category_id')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <div class="form-group row definition-entry">
                             <label for="definition" class="col-md-4 col-form-label text-md-right">{{ __('definition') }}</label>
 
@@ -133,5 +153,38 @@
             </div>
         </div>
     </div>
+@if ($entries ?? '')
+ 
+@foreach ( $entries as $entry )
+
+    <div class="col-12 d-flex" style="border: 1px solid red">
+        <div class="col-3 m-auto title" style="border: 1px solid green"><p>{{ $entry->title}}</p></div>
+        <div class="col-3 m-auto categories" style="border: 1px solid green">
+            @if ($entry->categories->count() > 0)
+            <ul>
+                @foreach ($entry->categories as $category)
+                    <li>{{ $category->name }}</li>
+                @endforeach
+            </ul>
+            @else
+                <p>no tiene categorias</p>
+            @endif
+        </div>
+        <div class="col-3 m-auto sources" style="border: 1px solid green">
+            @if ($entry->sources->count() > 0)
+                <ul>
+                    @foreach ($entry->sources as $source)
+                        <li>{{ $source->name }} {{ $source->link }}</li>
+                    @endforeach
+                </ul>
+            @else
+                <p>no tiene fuentes</p>
+            @endif
+        </div>
+
+    </div>
+@endforeach
+@endif
+
 </div>
 @endsection
