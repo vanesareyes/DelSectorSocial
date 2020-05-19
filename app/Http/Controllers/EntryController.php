@@ -100,36 +100,26 @@ class EntryController extends Controller
                         $newSource->save();
                     }
                 }
-                
-            
-        } else {
-            // ESTO ES PROVISORIO, PERO EN CASO DE QUE NO SE GUARDE LA ENTRADA ME MANDA DE NUEVO A LA PÁGINA ANTERIO CON UNA NO TIFICACIÓN DE QUE NO SE GUARDÓ LA ENTRADA
-            return redirect()->route('createEntries')->with('message', 'La entrada no pudo ser creada'); //hay que poner un condicional para que en la vista aparezca en danger(rojo) y no verde (el fondo)
-        }
-    // 3ERO CREAR LAS RELACIONES CON LAS CATEGORIAS
-        if ($guardo) {
-             //BUSCO ESA ENTRADA CREADA
-            $entrada_id = $entrada->id;  //SOLAMENTE BUSCO EL ID PARA PONERLO EN LOS RECURSOS QUE PUDO HABER PUESTO
-
+            // 3ERO CREAR LAS RELACIONES CON LAS CATEGORIAS
             $categories = $request->input('categories'); // PONGO TODAS LAS Categorias EN LA VARIABLE $categories 
-            
-             //HAGO UN FOREACH PARA ENTRAR EN CADA UNA DE LAS Categorias (VACIAS O COMPLETAS)
+        
+            //HAGO UN FOREACH PARA ENTRAR EN CADA UNA DE LAS Categorias (VACIAS O COMPLETAS)
                 
                 if ( count($categories) > 0 ) { //LO CONDICIONO PARA QUE no entré si viene sin nada, es algo más de seguridad
                     //por las dudas llamé denuevo a la entrada que ya se creó (porque me había dado un error, pero se puede probar de nuevo solo llamar a la que lla había hecho más arriba)                                        
         
                     // Se supone que acá entra a cada elemento del array categories
                     //category tendría que ser el numero del ID de las categorias que se seleccionaron
-                   foreach ($categories as  $category) {
+                    foreach ($categories as  $category) {
     
                         $entrada->categories()->attach($category);//tengo un ejemplo en web.php en la ruta prueba
 
-                   }
+                    }
                 }
             
         } else {
             // ESTO ES PROVISORIO, PERO EN CASO DE QUE NO SE GUARDE LA ENTRADA ME MANDA DE NUEVO A LA PÁGINA ANTERIO CON UNA NO TIFICACIÓN DE QUE NO SE GUARDÓ LA ENTRADA
-            return redirect()->route('createEntries')->with('message', 'La entrada no pudo ser creada'); //hay que poner un condicional para que en la vista aparezca en danger(rojo) y no verde (el fondo)
+            return redirect()->route('createEntries')->with('message', 'La entrada NO pudo ser creada'); //hay que poner un condicional para que en la vista aparezca en danger(rojo) y no verde (el fondo)
         }
 
         // SI YA SE CREO TODO BIEN ME VA A MANDAR A LA PÁGINA ANTERIO, PERO CON UNA NOTIFICACIÓN DE QUE SE GUARDÓ CON EXITO
