@@ -32,29 +32,25 @@
 
 
       <section class="countrys">
-        <p>
-          Glosario de recomendaciones terminológicas
-           que busca cuestionar las expresiones
-           discriminatorias del lenguaje automático.
-         </p>
-         <br>
-         <br>
-         <br>
-         <p>
-           Glossaire de recommandations
-           terminologiques, qui cherche a interroger
-           les expressions discriminatoires
-           et stigmatisant du langage automatique.
-          </p>
-          <br>
-          <br>
-          <br>
-          <p>
-            Glossary of recommended terminology
-            that looks to question discriminatory
-            expressions and terms in e veryday language.
-           </p>
+        @forelse($languages as $language)
 
+          <article class="{{ $language->name }}">
+            <p>{{ $language->text }}</p>
+            @foreach($countries as $country)
+              @if($country->language_id == $language->id)
+                <div class="{{ $country->name }}">
+                  <a href="#"><img src="{{ $country->flag }}" alt="Bandera de {{ $country->name }}"></a>
+                  <br>
+                  <span>{{ $country->name }}</span>
+                </div>
+              @endif
+            @endforeach
+          </article>
+
+        @empty
+        NO HAY ENTRADAS DISPONIBLES
+
+        @endforelse
       </section>
 
     </div>
