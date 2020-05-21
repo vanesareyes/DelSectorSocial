@@ -34,7 +34,7 @@ class EntryController extends Controller
         $entries = Entry::all()->sortByDesc('id');// para que te nuestra desde lo último al primero
         return view('createEntries')->with('languages', $languages)
                                     ->with('categories', $categories)
-                                    ->with('entries', $entries);      
+                                    ->with('entries', $entries);
     }
 
     /**
@@ -45,13 +45,16 @@ class EntryController extends Controller
      */
     public function store(Request $request)
     {
-         //** HAY QUE ACLARAR QUE TODAVÍA FALTAN LAS VALIDACIONES **
+         //**TODAVÍA FALTAN LAS VALIDACIONES**
          $request->validate([
            'title' => 'required',
            'definition' => 'required',
            'recommendedEntry1' => 'required',
            'howToUse' => 'required'
+         ], [
+           'required' => 'Este campo es obligatorio'
          ]);
+
     // 1ERO CREO UNA ENTRADA
         $entry = new Entry();
 
