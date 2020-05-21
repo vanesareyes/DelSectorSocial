@@ -2,8 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="vistas.css">
-    <link rel="stylesheet" href="fontello/css/facebook.css">
+    <link rel="stylesheet" href="/css/home/style.css">
+    <link rel="stylesheet" href="/css/home/fontello/css/facebook.css">
     <title>Del Sector Social</title>
   </head>
   <body>
