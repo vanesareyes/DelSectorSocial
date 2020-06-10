@@ -18,9 +18,57 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/layouts/styles.css">
 </head>
 <body>
-    <div id="app">
+
+<header>
+
+  <ul id="navbar">
+    <li> <a href="#">Acceder</a> </li>
+    <li> <a href="#">Ver historial</a> </li
+  </ul>
+</header>
+<aside id="leftMenu">
+
+  <div class="logo">
+
+  </div>
+
+  <ul id='listMenu'>
+    <li> <a href="#">Home</a> </li>
+    <li> <a href="#">Quienes somos</a> </li>
+    <li> <a href="#">Derechos de autor</a> </li>
+    <li> <a href="#">Notificar errores</a> </li>
+  </ul>
+  <form id='searchForm' action="/busqueda" method="GET">
+            <div class="input-group">
+              <input name="busqueda" type="text" class="form-control" placeholder="Buscar">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"> <!--Asignarle funcionamiento al botón de búsqueda-->
+                  <i class="fas fa-search"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--    <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -31,14 +79,14 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
+                     Left Side Of Navbar
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
 
-                    <!-- Right Side Of Navbar -->
+                     Right Side Of Navbar
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+                        Authentication Links
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -70,7 +118,7 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav>-->
 
         <main class="py-4">
             @yield('content')

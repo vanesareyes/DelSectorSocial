@@ -39,3 +39,7 @@ Route::get('/home', 'HomeController@index')->name('home');
             // }
         dd($entry->categories);
     });
+
+    Route::get('categories', function(){
+      return view('categories');
+    })->name('categories');

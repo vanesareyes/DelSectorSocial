@@ -1,0 +1,68 @@
+*{
+  padding: 0px;
+  margin:0px;
+  box-sizing: border-box;
+  font-family: "Linux Libertine",Georgia,Times,serif;
+}
+
+
+header, aside{
+  background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+  background-blend-mode: screen;
+  text-decoration: none;
+}
+
+header{
+  width: 100%;
+  height: 10vh;
+}
+
+.logo{
+  position:absolute;
+  top: 5px;
+  left: 30px;
+  background-image: url(https://delsectorsocial.org/resources/assets/delsector/logo.png);
+  background-size: 160px 160px;
+  background-position: center center;
+  display: block;
+  width: 10em;
+  height: 160px;
+  background-repeat: no-repeat;
+}
+
+#navbar{
+position: absolute;
+top: 0px;
+right: 0px;
+
+}
+
+.navbar li{
+  margin-bottom: 5px;
+}
+
+#leftMenu{
+  width: 13%;
+  height: 100vh;
+  color: #0b0080;
+  font-size: 12px;
+}
+
+#listMenu{
+  line-height: 2em;
+  padding-top: 90px;
+
+}
+
+#listMenu li{
+  width: 100%;
+  text-align: center;
+}
+
+#searchForm{
+  display: flex;
+}
+
+#searchForm input{
+  justify-content: space-between;
+}
