@@ -4,6 +4,10 @@
   box-sizing: border-box;
   font-family: "Linux Libertine",Georgia,Times,serif;
 }
+/* Esta class es para el aside y para el main de la plantilla app */
+.aside-content-app{
+  display: flex;
+}
 
 
 header, aside{
@@ -21,7 +25,7 @@ header{
   position:absolute;
   top: 5px;
   left: 30px;
-  background-image: url(https://delsectorsocial.org/resources/assets/delsector/logo.png);
+  background-image: url('https://delsectorsocial.org/resources/assets/delsector/logo.png');
   background-size: 160px 160px;
   background-position: center center;
   display: block;
@@ -42,10 +46,14 @@ right: 0px;
 }
 
 #leftMenu{
-  width: 13%;
+  /* width: 13%; */
   height: 100vh;
   color: #0b0080;
   font-size: 12px;
+
+  min-width: min-content;
+  max-width: 14vw
+
 }
 
 #listMenu{
@@ -65,4 +73,13 @@ right: 0px;
 
 #searchForm input{
   justify-content: space-between;
+}
+
+/* Esta parte es para todo el content que tienen el main en el layout app */
+#main-content{
+  min-width: min-content;
+  width: 86vw;
+  
+  border-top: 1px solid lightblue;
+  border-left: 1px solid lightblue;
 }

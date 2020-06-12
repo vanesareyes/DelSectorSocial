@@ -20,51 +20,45 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="css/layouts/styles.css">
 </head>
-<body>
+<body class="body-app">
 
 <header>
 
   <ul id="navbar">
     <li> <a href="#">Acceder</a> </li>
-    <li> <a href="#">Ver historial</a> </li
+    <li> <a href="#">Ver historial</a> </li>
   </ul>
 </header>
-<aside id="leftMenu">
+<div class="aside-content-app">
+    <aside id="leftMenu">
 
-  <div class="logo">
+        <div class="logo">
 
-  </div>
+        </div>
 
-  <ul id='listMenu'>
-    <li> <a href="#">Home</a> </li>
-    <li> <a href="#">Quienes somos</a> </li>
-    <li> <a href="#">Derechos de autor</a> </li>
-    <li> <a href="#">Notificar errores</a> </li>
-  </ul>
-  <form id='searchForm' action="/busqueda" method="GET">
+        <ul id='listMenu'>
+            <li> <a href="#">Home</a> </li>
+            <li> <a href="#">Quienes somos</a> </li>
+            <li> <a href="#">Derechos de autor</a> </li>
+            <li> <a href="#">Notificar errores</a> </li>
+        </ul>
+        <form id='searchForm' action="/busqueda" method="GET">
             <div class="input-group">
-              <input name="busqueda" type="text" class="form-control" placeholder="Buscar">
-              <div class="input-group-btn">
+            <input name="busqueda" type="text" class="form-control" placeholder="Buscar">
+            <div class="input-group-btn">
                 <button class="btn btn-default" type="submit"> <!--Asignarle funcionamiento al botón de búsqueda-->
-                  <i class="fas fa-search"></i>
+                <i class="fas fa-search"></i>
                 </button>
-              </div>
             </div>
-          </form>
+            </div>
+        </form>
 
-</aside>
+    </aside>
 
-
-
-
-
-
-
-
-
-
-
-
+    <main id="main-content" class="py-4 main-content">
+        @yield('content')
+    </main>
+</div>
 
 
 
@@ -120,9 +114,5 @@
             </div>
         </nav>-->
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
 </body>
 </html>
