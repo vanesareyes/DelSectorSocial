@@ -78,24 +78,38 @@ max-width: 300px;
 /*COUNTRYS*/
 .countrys{
   width: 100%;
-  margin-top: 10vw;
-  text-align: center;
+  margin-top: 12vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .countrys article{
   font-size: 15px;
-  text-align: justify;
-  width:30%;
+  width:100%;
   display: flex;
   flex-wrap: wrap;
 }
 
-.country article div{
-  width: 50%;
+.countrys article p {
+  text-align: justify;
+  margin-bottom: 5vh
 }
-.country article div img{
-  width: 50px!important;
-  height:50px;
+
+.country{
+  width: 50%;
+  height: 150px;
+  align-items: center;
+  display:flex;
+  justify-content:
+}
+
+.country img{
+  width: 150px;
+  height: auto;
+}
+
+.tag{
+  margin-left: 10px;
+  width: 100%;
 }

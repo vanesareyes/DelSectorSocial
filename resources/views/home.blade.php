@@ -38,11 +38,20 @@
             <p>{{ $language->text }}</p>
             @foreach($countries as $country)
               @if($country->language_id == $language->id)
-                <div class="{{ $country->name }}">
-                  <a href="#"><img src="{{ $country->flag }}" alt="Bandera de {{ $country->name }}"></a>
+                <div class=" country ">
+
+                  <div class="img-{{ $country->name }}">
+                    <a href="#"><img src="{{ $country->flag }}" alt="Bandera de {{ $country->name }}"></a>
+                  </div>
+
                   <br>
-                  <span>{{ $country->name }}</span>
+
+                  <div class="tag">
+                    {{ $country->name }}
+                  </div>
+
                 </div>
+
               @endif
             @endforeach
           </article>

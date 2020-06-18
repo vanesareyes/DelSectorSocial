@@ -19,42 +19,42 @@ class CountrySeeder extends Seeder
 
       Country::create([
         'name' => 'Argentina',
-        'flag' => 'https://delsectorsocial.org/iconos-flags/Argentina.png',
+        'flag' => './css/home/img/Argentina.png',
         'language_id' => $spanish
       ]);
       Country::create([
         'name' => 'Colombia',
-        'flag' => 'https://delsectorsocial.org/iconos-flags/Colombia.png',
+        'flag' => './css/home/img/Colombia.png',
         'language_id' => $spanish
       ]);
       Country::create([
         'name' => 'España',
-        'flag' => 'https://delsectorsocial.org/iconos-flags/Spain.png',
+        'flag' => './css/home/img/España.png',
         'language_id' => $spanish
       ]);
       Country::create([
         'name' => 'Perú',
-        'flag' => 'https://delsectorsocial.org/iconos-flags/Peru.png',
+        'flag' => './css/home/img/Peru.png',
         'language_id' => $spanish
       ]);
       Country::create([
         'name' => 'Venezuela',
-        'flag' => 'https://delsectorsocial.org/iconos-flags/Venezuela.png',
+        'flag' => './css/home/img/Venezuela.png',
         'language_id' => $spanish
       ]);
       Country::create([
         'name' => 'Francia',
-        'flag' => 'https://delsectorsocial.org/iconos-flags/France.png',
+        'flag' => './css/home/img/Francia.png',
         'language_id' => $french
       ]);
       Country::create([
         'name' => 'Suiza',
-        'flag' => 'https://delsectorsocial.org/iconos-flags/Switzerland.png',
+        'flag' => './css/home/img/Suiza.png',
         'language_id' => $french
       ]);
       Country::create([
         'name' => 'Estados Unidos',
-        'flag' => 'https://delsectorsocial.org/iconos-flags/USA.png',
+        'flag' => './css/home/img/EEUU.png',
         'language_id' => $english
       ]);
     }
