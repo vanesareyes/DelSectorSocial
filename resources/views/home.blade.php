@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" />
     <link rel="stylesheet" href="/css/home/style.css">
     <link rel="stylesheet" href="/css/home/fontello/css/facebook.css">
     <title>Del Sector Social</title>
@@ -38,7 +39,7 @@
             <p>{{ $language->text }}</p>
             @foreach($countries as $country)
               @if($country->language_id == $language->id)
-                <div class=" country ">
+                <div class="country">
 
                   <div class="img-{{ $country->name }}">
                     <a href="#"><img src="{{ $country->flag }}" alt="Bandera de {{ $country->name }}"></a>

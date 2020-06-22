@@ -101,12 +101,12 @@ max-width: 300px;
   height: 150px;
   align-items: center;
   display:flex;
-  justify-content:
+  flex-direction: column;
 }
 
 .country img{
   width: 150px;
-  height: auto;
+  height: 99.97px;
 }
 
 .tag{
