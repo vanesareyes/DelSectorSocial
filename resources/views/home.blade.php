@@ -40,17 +40,17 @@
             @foreach($countries as $country)
               @if($country->language_id == $language->id)
                 <div class="country">
+                  <div class="country-box">
 
-                  <div class="img-{{ $country->name }}">
-                    <a href="#"><img src="{{ $country->flag }}" alt="Bandera de {{ $country->name }}"></a>
+                    <div class="country-flag">
+                      <a href="#"><img src="{{ $country->flag }}" alt="Bandera de {{ $country->name }}"></a>
+                    </div>
+                    <br>
+                    <div class="tag">
+                      {{ $country->name }}
+                    </div>
+
                   </div>
-
-                  <br>
-
-                  <div class="tag">
-                    {{ $country->name }}
-                  </div>
-
                 </div>
 
               @endif
@@ -64,6 +64,9 @@
       </section>
 
     </div>
+    <footer>
+      <img src="./css/footer.jpg" alt="logo-footer">
+    </footer>
 
   </body>
 </html>
