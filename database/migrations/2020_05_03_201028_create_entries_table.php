@@ -18,16 +18,19 @@ class CreateEntriesTable extends Migration
             $table->unsignedBigInteger('language_id');
             $table->foreign('language_id')
                     ->references('id')
-                    ->on('languages');
-            $table->unsignedBigInteger('author_id');
-            $table->foreign('author_id')
-                    ->references('id')
-                    ->on('users');
-            $table->char('title', 50);
+                    ->on('languages')
+                    ->onDelete('cascade');
+            // $table->unsignedBigInteger('author_id');
+            // $table->foreign('author_id')
+            //         ->references('id')
+            //         ->on('users');
+            $table->string('title', 50);
             $table->longText('definition');
-            $table->char('recommendedEntry1', 80)->nullable();
-            $table->char('recommendedEntry2', 80)->nullable();
-            $table->text('howToUse')->nullable()->default(null);
+            $table->text('recomendation');
+            $table->unsignedBigInteger('state_id');
+            $table->foreign('state_id')
+                    ->references('id')
+                    ->on('states');
             $table->timestamps();
         });
     }

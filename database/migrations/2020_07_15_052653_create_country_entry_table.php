@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCampaignsTable extends Migration
+class CreateCountryEntryTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,18 @@ class CreateCampaignsTable extends Migration
      */
     public function up()
     {
-        Schema::create('campaigns', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('title', 50);
-            $table->string('link', 225);
+        Schema::create('country_entry', function (Blueprint $table) {
+            $table->id();
             $table->unsignedBigInteger('entry_id');
             $table->foreign('entry_id')
                     ->references('id')
                     ->on('entries')
                     ->onDelete('cascade');
-            $table->unsignedBigInteger('state_id');
-            $table->foreign('state_id')
+            $table->unsignedBigInteger('country_id');
+            $table->foreign('country_id')
                     ->references('id')
-                    ->on('states');    
+                    ->on('countries')
+                    ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -37,6 +36,6 @@ class CreateCampaignsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('campaigns');
+        Schema::dropIfExists('country_entry');
     }
 }

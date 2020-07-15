@@ -15,8 +15,8 @@ class CreateCountriesTable extends Migration
     {
         Schema::create('countries', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('name', 50)->unique();
-            $table->char('flag', 255);
+            $table->string('name', 50)->unique();
+            $table->string('flag', 255);
             $table->unsignedBigInteger('language_id');
             $table->foreign('language_id')
                     ->references('id')

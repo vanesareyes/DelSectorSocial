@@ -26,14 +26,23 @@ class DatabaseSeeder extends Seeder
       ]);
       $this->call([
         RoleSeeder::class,
+        UserSeeder::class,
+        StateSeeder::class,
+        CategorySeeder::class,
         LanguageSeeder::class,
         CountrySeeder::class,
-        CategorySeeder::class,
         CategoryCountrySeeder::class,
-        UserSeeder::class,
         EntrySeeder::class,
+        ContryEntrySeeder::class,
+        EntryUserSeeder::class,
+        CategoryEntrySeeder::class,
+        RecommendedTermSeeder::class,
         CampaignSeeder::class,
         SourceSeeder::class,
+        DebateSeeder::class,
+        DebateEntrySeeder::class,
+        CommentSeeder::class,
+        AnswerSeeder::class,
         ]);
 
     }

@@ -15,8 +15,8 @@ class CreateSourcesTable extends Migration
     {
         Schema::create('sources', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->char('name', 100);
-            $table->char('link', 225);
+            $table->string('title', 100);
+            $table->string('link', 225);
             $table->unsignedBigInteger('entry_id');
             $table->foreign('entry_id')
                     ->references('id')
