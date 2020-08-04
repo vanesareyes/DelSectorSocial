@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Source extends Model
 {
-    public function entry()
+  protected $fillable = [
+    'title', 'link', 'entry_id',
+];
+  public function entry()
   {
-    return $this->belongsTo(Entry::class);
+    return $this->belongsTo('App\Entry');
   }
 }

@@ -6,10 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Campaign extends Model
 {
-    protected $fillable = ['title','description', 'link', 'entry_id'];
+    protected $fillable = ['title', 'link', 'entry_id', 'state_id',
+  ];
 
-    public function entries()
+  public function entries()
   {
-          return $this->belongsToMany(Entry::class);
+    return $this->belongsTo('App\Entry');
+  }
+
+  public function state()
+  {
+    return $this->belongsTo('App\State');
   }
 }

@@ -1,8 +1,6 @@
 <?php
 
-use App\Category;
 use Illuminate\Support\Facades\Route;
-use App\Entry;
 
 /*
 |--------------------------------------------------------------------------

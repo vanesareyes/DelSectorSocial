@@ -3,30 +3,44 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Campaign;
-use App\Source;
-use App\Category;
 
 class Entry extends Model
 {
-  protected $fillable = ['language_id','title', 'definition', 'recomendedEntry1', 'recomendedEntry2', 'howToUse'];
+  protected $fillable = ['language_id', 'title', 'definition', 'recomendation', 'state_id'
+  ];
   public $table = "entries";
+
+  public function language(){
+    return $this->belongsTo('App\Language');
+  }
   
-  public function campaigns()
+  public function state(){
+    return $this->belongsTo('App\State');
+  }
+  
+  public function users()
   {
-    return $this->belongsToMany(Campaign::class);
+    return $this->belongsToMany('App\User')->withPivot('isAuthor');
+  }
+
+  public function countries()
+  {
+    return $this->belongsToMany('App\Country');
   }
   
   public function sources()
   {
-    return $this->hasMany(Source::class);
+    return $this->hasMany('App\Source');
   }
 
   public function categories()
   {
-    return $this->belongsToMany(Category::class);
+    return $this->belongsToMany('App\Category');
   }
   
+  public function recommendedterms(){
+    return $this->hasMany('App\Recommendedterm');
+  }
   
   public $guarded = [];
 }

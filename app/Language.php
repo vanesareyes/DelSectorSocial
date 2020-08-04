@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Language extends Model
 {
-    //
+    protected $fillable = [
+        'name', 'text',
+    ];
+
+    public function entries(){
+        return $this->hasMany('App\Entry');
+    }
 }
