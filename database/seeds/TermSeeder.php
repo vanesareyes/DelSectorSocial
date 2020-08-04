@@ -2,8 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Recommendedterm;
-
-class RecommendedtermSeeder extends Seeder
+class TermSeeder extends Seeder
 {
     /**
      * Run the database seeds.

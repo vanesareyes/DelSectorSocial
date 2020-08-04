@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRecommendedTermsTable extends Migration
+class CreateRecommendedtermsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateRecommendedTermsTable extends Migration
      */
     public function up()
     {
-        Schema::create('recommended_terms', function (Blueprint $table) {
+        Schema::create('recommendedterms', function (Blueprint $table) {
             $table->id();
             $table->string('name',255);
             $table->unsignedBigInteger('entry_id');
@@ -37,6 +37,6 @@ class CreateRecommendedTermsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('recommended_terms');
+        Schema::dropIfExists('recommendedterms');
     }
 }

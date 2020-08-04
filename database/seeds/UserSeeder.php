@@ -17,28 +17,28 @@ class UserSeeder extends Seeder
       $userId = DB::table('roles')->whereName('user')->value('id');
 
         User::create([
-          'first_name' => 'Administrador',
+          'name' => 'Administrador',
           'last_name' => 'delsectorsocial',
           'email' => 'administrador@gmail.com',
           'password' => bcrypt('administrador'),
           'role_id' => $adminId
         ]);
         User::create([
-          'first_name' => 'Usuario',
+          'name' => 'Usuario',
           'last_name' => 'delsectorsocial',
           'email' => 'usuario@gmail.com',
           'password' => bcrypt('usuario'),
           'role_id' => $userId
         ]);
         User::create([
-          'first_name' => 'Usuario1',
+          'name' => 'Usuario1',
           'last_name' => 'delsectorsocial',
           'email' => 'usuario1@gmail.com',
           'password' => bcrypt('usuario1'),
           'role_id' => $userId
         ]);
         User::create([
-          'first_name' => 'Usuario2',
+          'name' => 'Usuario2',
           'last_name' => 'delsectorsocial',
           'email' => 'usuario2@gmail.com',
           'password' => bcrypt('usuario2'),

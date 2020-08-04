@@ -15,16 +15,16 @@ class CampaignSeeder extends Seeder
     {
         Campaign::create([
           'title' => 'Campaña contra el abandono de estudios',
-          'description' => 'lorem ipsum',
+          'entry_id' => 1,
           'link' => 'http://www.cbtis233.mx/escolares/campana-abandono-escolar-sigue-estudiando/',
-          'entry_id' => 1
+          'state_id' => 1,
           ]);
 
         Campaign::create([
           'title' => 'Campaña a favor de los pueblos originarios',
-          'description' => 'lorem ipsum',
+          'entry_id' => 1,
           'link' => 'https://www.survival.es/indigenas',
-          'entry_id' => 1
+          'state_id' => 1,
         ]);
     }
 }

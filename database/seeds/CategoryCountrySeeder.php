@@ -13,8 +13,8 @@ class CategoryCountrySeeder extends Seeder
      */
     public function run()
     {
-
-        //COUNTRIES ID//
+      
+      //COUNTRIES ID//
         $argentinaId = DB::table('countries')->whereName('Argentina')->value('id');
         $colombiaId = DB::table('countries')->whereName('Colombia')->value('id');
         $españaId = DB::table('countries')->whereName('España')->value('id');
@@ -24,25 +24,27 @@ class CategoryCountrySeeder extends Seeder
         $suizaId = DB::table('countries')->whereName('Suiza')->value('id');
         $estadosUnidosId = DB::table('countries')->whereName('Estados Unidos')->value('id');
 
-        //ARRAYS COUNTRIES ID//
+      //ARRAYS COUNTRIES ID//
         $spanishCountries = [$argentinaId, $colombiaId, $españaId, $peruId, $venezuelaId];
         $frenchCountries = [$franciaId, $suizaId];
         $englishCountries = [$estadosUnidosId];
 
         $arrayOfCountries = [ $spanishCountries, $frenchCountries, $englishCountries];
 
-        //CATEGORIES//
+      //CATEGORIES//
         $categories = Category::all();
 
         foreach($arrayOfCountries as $countries)
         {
           foreach($countries as $country)
           {
-            if($country < 6){
+            if($country < 6)
+            {
               foreach($categories as $category)
               {
                 $category_id = $category->id;
-                if($category_id < 23){
+                if($category_id < 23)
+                {
                   DB::table('category_country')->insert([
                     'category_id' => $category_id,
                     'country_id' => $country
@@ -69,10 +71,10 @@ class CategoryCountrySeeder extends Seeder
                      'category_id' => $category_id,
                      'country_id' => $country
                    ]);
-            }
-          }
+                  }
+                }
+              }
         }
       }
     }
-  }
 }

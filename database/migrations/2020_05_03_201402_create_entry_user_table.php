@@ -24,7 +24,7 @@ class CreateEntryUserTable extends Migration
                     ->references('id')
                     ->on('entries')
                     ->onDelete('cascade');
-            $table->boolean('isAuthor')->default(null);
+            $table->boolean('isAuthor')->nullable()->default(false);
             $table->timestamps();
         });
     }

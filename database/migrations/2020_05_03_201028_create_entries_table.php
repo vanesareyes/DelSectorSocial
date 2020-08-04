@@ -20,10 +20,6 @@ class CreateEntriesTable extends Migration
                     ->references('id')
                     ->on('languages')
                     ->onDelete('cascade');
-            // $table->unsignedBigInteger('author_id');
-            // $table->foreign('author_id')
-            //         ->references('id')
-            //         ->on('users');
             $table->string('title', 50);
             $table->longText('definition');
             $table->text('recomendation');
