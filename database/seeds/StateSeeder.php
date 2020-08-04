@@ -11,6 +11,8 @@ class StateSeeder extends Seeder
      */
     public function run()
     {
-        //
+        State::create([
+            'name' => 'Definición.de Deserción escolar',
+        ]);
     }
 }

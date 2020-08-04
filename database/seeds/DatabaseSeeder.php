@@ -40,10 +40,6 @@ class DatabaseSeeder extends Seeder
         RecommendedTermSeeder::class,
         CampaignSeeder::class,
         SourceSeeder::class,
-        DebateSeeder::class,
-        DebateEntrySeeder::class,
-        CommentSeeder::class,
-        AnswerSeeder::class,
         ]);
 
     }
