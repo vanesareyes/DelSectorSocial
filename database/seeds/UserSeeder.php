@@ -13,9 +13,17 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+      $adminPrinId = DB::table('roles')->whereName('principalAdmin')->value('id');
       $adminId = DB::table('roles')->whereName('admin')->value('id');
       $userId = DB::table('roles')->whereName('user')->value('id');
 
+        User::create([
+          'name' => 'Administrador Principal',
+          'last_name' => 'delsectorsocial',
+          'email' => 'administradorPrincipal@gmail.com',
+          'password' => bcrypt('administradorPrincipal'),
+          'role_id' => $adminId
+        ]);
         User::create([
           'name' => 'Administrador',
           'last_name' => 'delsectorsocial',

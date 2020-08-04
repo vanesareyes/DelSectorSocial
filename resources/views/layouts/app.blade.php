@@ -25,7 +25,7 @@
 <header>
 
   <ul id="navbar">
-    <li> <a href="#">Acceder</a> </li>
+    <li> <a href="{{ route('login') }}">Acceder</a> </li>
     <li> <a href="#">Ver historial</a> </li>
   </ul>
 </header>
